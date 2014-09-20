@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC12E13719BB63FB00AECF40 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC12E13619BB63FB00AECF40 /* MapKit.framework */; };
+		DC6D021B19C4AAA40011408E /* DeviceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D021919C4AAA40011408E /* DeviceMapViewController.swift */; };
+		DC6D021F19C4AAD20011408E /* DeviceDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D021D19C4AAD20011408E /* DeviceDetailsViewController.xib */; };
+		DC6D022019C4AAD20011408E /* DeviceMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D021E19C4AAD20011408E /* DeviceMapViewController.xib */; };
+		DC6D022219C4AAE50011408E /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D022119C4AAE50011408E /* DeviceDetailsViewController.swift */; };
+		DCA3010C19BB9D1800E76870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3010719BB9D1700E76870 /* AppDelegate.swift */; };
+		DCA3010D19BB9D1800E76870 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3010819BB9D1700E76870 /* Device.swift */; };
+		DCA3010E19BB9D1800E76870 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3010919BB9D1700E76870 /* LoginViewController.swift */; };
+		DCA3010F19BB9D1800E76870 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3010A19BB9D1700E76870 /* MainViewController.swift */; };
+		DCA3011019BB9D1800E76870 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3010B19BB9D1700E76870 /* RegisterViewController.swift */; };
+		DCA3011519BB9D2600E76870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011119BB9D2600E76870 /* Images.xcassets */; };
+		DCA3011619BB9D2600E76870 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011219BB9D2600E76870 /* LoginViewController.xib */; };
+		DCA3011719BB9D2600E76870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011319BB9D2600E76870 /* Main.storyboard */; };
+		DCA3011819BB9D2600E76870 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011419BB9D2600E76870 /* RegisterViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC12E13619BB63FB00AECF40 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DC6D021919C4AAA40011408E /* DeviceMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceMapViewController.swift; path = StuffWatcher/DeviceMapViewController.swift; sourceTree = SOURCE_ROOT; };
+		DC6D021D19C4AAD20011408E /* DeviceDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeviceDetailsViewController.xib; path = StuffWatcher/Resources/DeviceDetailsViewController.xib; sourceTree = SOURCE_ROOT; };
+		DC6D021E19C4AAD20011408E /* DeviceMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeviceMapViewController.xib; path = StuffWatcher/Resources/DeviceMapViewController.xib; sourceTree = SOURCE_ROOT; };
+		DC6D022119C4AAE50011408E /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceDetailsViewController.swift; path = StuffWatcher/DeviceDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCA3010719BB9D1700E76870 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = StuffWatcher/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		DCA3010819BB9D1700E76870 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = StuffWatcher/Device.swift; sourceTree = SOURCE_ROOT; };
+		DCA3010919BB9D1700E76870 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = StuffWatcher/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCA3010A19BB9D1700E76870 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = StuffWatcher/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCA3010B19BB9D1700E76870 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = StuffWatcher/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCA3011119BB9D2600E76870 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StuffWatcher/Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		DCA3011219BB9D2600E76870 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = StuffWatcher/Resources/LoginViewController.xib; sourceTree = SOURCE_ROOT; };
+		DCA3011319BB9D2600E76870 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = StuffWatcher/Resources/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		DCA3011419BB9D2600E76870 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = StuffWatcher/Resources/RegisterViewController.xib; sourceTree = SOURCE_ROOT; };
+		DCA3011919BB9D3500E76870 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StuffWatcher/Info.plist; sourceTree = SOURCE_ROOT; };
+		DCF5CBCA19B9AEC8000DFA0E /* StuffWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuffWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCF5CBC719B9AEC8000DFA0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC12E13719BB63FB00AECF40 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC5CAB7919C0E7C6005B8FA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC12E13619BB63FB00AECF40 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCF5CBC119B9AEC8000DFA0E = {
+			isa = PBXGroup;
+			children = (
+				DCF5CBCC19B9AEC8000DFA0E /* StuffWatcher */,
+				DC5CAB7919C0E7C6005B8FA5 /* Frameworks */,
+				DCF5CBCB19B9AEC8000DFA0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCF5CBCB19B9AEC8000DFA0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCF5CBCA19B9AEC8000DFA0E /* StuffWatcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCF5CBCC19B9AEC8000DFA0E /* StuffWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3010719BB9D1700E76870 /* AppDelegate.swift */,
+				DCA3010819BB9D1700E76870 /* Device.swift */,
+				DCA3010919BB9D1700E76870 /* LoginViewController.swift */,
+				DC6D021919C4AAA40011408E /* DeviceMapViewController.swift */,
+				DC6D022119C4AAE50011408E /* DeviceDetailsViewController.swift */,
+				DCA3010A19BB9D1700E76870 /* MainViewController.swift */,
+				DCA3010B19BB9D1700E76870 /* RegisterViewController.swift */,
+				DCF5CBEE19B9BF60000DFA0E /* Resources */,
+				DCF5CBCD19B9AEC8000DFA0E /* Supporting Files */,
+			);
+			name = StuffWatcher;
+			path = FindMe;
+			sourceTree = "<group>";
+		};
+		DCF5CBCD19B9AEC8000DFA0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3011919BB9D3500E76870 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCF5CBEE19B9BF60000DFA0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3011119BB9D2600E76870 /* Images.xcassets */,
+				DCA3011319BB9D2600E76870 /* Main.storyboard */,
+				DC6D021E19C4AAD20011408E /* DeviceMapViewController.xib */,
+				DC6D021D19C4AAD20011408E /* DeviceDetailsViewController.xib */,
+				DCA3011219BB9D2600E76870 /* LoginViewController.xib */,
+				DCA3011419BB9D2600E76870 /* RegisterViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCF5CBC919B9AEC8000DFA0E /* StuffWatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCF5CBE619B9AEC8000DFA0E /* Build configuration list for PBXNativeTarget "StuffWatcher" */;
+			buildPhases = (
+				DCF5CBC619B9AEC8000DFA0E /* Sources */,
+				DCF5CBC719B9AEC8000DFA0E /* Frameworks */,
+				DCF5CBC819B9AEC8000DFA0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StuffWatcher;
+			productName = FindMe;
+			productReference = DCF5CBCA19B9AEC8000DFA0E /* StuffWatcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCF5CBC219B9AEC8000DFA0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Felix Garcia Lainez";
+				TargetAttributes = {
+					DCF5CBC919B9AEC8000DFA0E = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = DCF5CBC519B9AEC8000DFA0E /* Build configuration list for PBXProject "StuffWatcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCF5CBC119B9AEC8000DFA0E;
+			productRefGroup = DCF5CBCB19B9AEC8000DFA0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCF5CBC919B9AEC8000DFA0E /* StuffWatcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCF5CBC819B9AEC8000DFA0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC6D021F19C4AAD20011408E /* DeviceDetailsViewController.xib in Resources */,
+				DCA3011719BB9D2600E76870 /* Main.storyboard in Resources */,
+				DCA3011619BB9D2600E76870 /* LoginViewController.xib in Resources */,
+				DC6D022019C4AAD20011408E /* DeviceMapViewController.xib in Resources */,
+				DCA3011819BB9D2600E76870 /* RegisterViewController.xib in Resources */,
+				DCA3011519BB9D2600E76870 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCF5CBC619B9AEC8000DFA0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA3010E19BB9D1800E76870 /* LoginViewController.swift in Sources */,
+				DCA3011019BB9D1800E76870 /* RegisterViewController.swift in Sources */,
+				DCA3010C19BB9D1800E76870 /* AppDelegate.swift in Sources */,
+				DCA3010D19BB9D1800E76870 /* Device.swift in Sources */,
+				DCA3010F19BB9D1800E76870 /* MainViewController.swift in Sources */,
+				DC6D022219C4AAE50011408E /* DeviceDetailsViewController.swift in Sources */,
+				DC6D021B19C4AAA40011408E /* DeviceMapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DCF5CBE419B9AEC8000DFA0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Garcia (UY8K23TLYW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Felix Garcia (UY8K23TLYW)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCF5CBE519B9AEC8000DFA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCF5CBE719B9AEC8000DFA0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = StuffWatcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = StuffWatcher;
+			};
+			name = Debug;
+		};
+		DCF5CBE819B9AEC8000DFA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = StuffWatcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = StuffWatcher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCF5CBC519B9AEC8000DFA0E /* Build configuration list for PBXProject "StuffWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCF5CBE419B9AEC8000DFA0E /* Debug */,
+				DCF5CBE519B9AEC8000DFA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCF5CBE619B9AEC8000DFA0E /* Build configuration list for PBXNativeTarget "StuffWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCF5CBE719B9AEC8000DFA0E /* Debug */,
+				DCF5CBE819B9AEC8000DFA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCF5CBC219B9AEC8000DFA0E /* Project object */;
+}
