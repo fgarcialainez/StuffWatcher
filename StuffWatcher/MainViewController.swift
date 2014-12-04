@@ -430,7 +430,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let disclosureIndicatorButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
                 disclosureIndicatorButton.tintColor = UIColor.clearColor()
                 disclosureIndicatorButton.enabled = false
-                disclosureIndicatorButton.setBackgroundImage(UIImage(named: "DisclosureIndicator").imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState: UIControlState.Normal)
+                disclosureIndicatorButton.setBackgroundImage(UIImage(named: "DisclosureIndicator")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState: UIControlState.Normal)
                 pinView!.rightCalloutAccessoryView = disclosureIndicatorButton
             }
             else {
