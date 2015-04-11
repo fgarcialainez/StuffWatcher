@@ -47,9 +47,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         headerView.addSubview(imageView)
         self.navigationItem.titleView = headerView
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
-        let signOutBarButtonItem = UIBarButtonItem(title: "Sign out", style: UIBarButtonItemStyle.Bordered, target: self, action: "signOutAction")
+        let signOutBarButtonItem = UIBarButtonItem(title: "Sign out", style: UIBarButtonItemStyle.Plain, target: self, action: "signOutAction")
         self.navigationItem.leftBarButtonItem = signOutBarButtonItem
         
         let addDeviceBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addDeviceAction")
@@ -235,12 +235,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Search", style: UIAlertActionStyle.Default, handler: { action in
-                self.newDeviceId = (self.alertController?.textFields![0] as UITextField).text.uppercaseString
+                self.newDeviceId = (self.alertController?.textFields![0] as! UITextField).text.uppercaseString
             
                 self.searchForDevicesAction()
             }))
         
-            (self.alertController!.actions[1] as UIAlertAction).enabled = false
+            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
@@ -282,7 +282,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.Default, handler: self.enterDeviceAliasAction))
                 
-            (self.alertController!.actions[1] as UIAlertAction).enabled = false
+            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
@@ -300,14 +300,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Finish", style: UIAlertActionStyle.Default, handler: self.finishAddDeviceProcessAction))
                 
-            (self.alertController!.actions[1] as UIAlertAction).enabled = false
+            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
     
     private func finishAddDeviceProcessAction(var action: UIAlertAction!) {
         //Add new device
-        let newDeviceAlias = (self.alertController?.textFields![0] as UITextField).text
+        let newDeviceAlias = (self.alertController?.textFields![0] as! UITextField).text
         let newDevice = Device(alias: newDeviceAlias, deviceId: self.newDeviceId!, deviceType: self.newDeviceType!, deviceState: Device.DeviceState.Inactive)
         
         if self.newDeviceType! == Device.DeviceType.GPS_3G {
@@ -321,9 +321,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func handleTextFieldTextDidChangeNotification(notification: NSNotification) {
-        let textField = notification.object as UITextField
+        let textField = notification.object as! UITextField
         
-        (self.alertController!.actions[1] as UIAlertAction).enabled = !textField.text.isEmpty
+        (self.alertController!.actions[1] as! UIAlertAction).enabled = !textField.text.isEmpty
     }
     
     // MARK: - LoginViewControllerDelegate
@@ -335,7 +335,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - UIActionSheetDelegate
     
-    func actionSheet(actionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int)
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int)
     {
         if actionSheet == self.logoutActionSheet {
             switch buttonIndex {
@@ -369,7 +369,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
     
@@ -379,7 +379,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let KCellId = "DeviceCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(KCellId) as UITableViewCell?
+        var cell = tableView.dequeueReusableCellWithIdentifier(KCellId) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: KCellId)
         }
@@ -404,7 +404,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell!
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Show device details view
         showDeviceDetailsView(self.devicesArray![indexPath.row])
         
@@ -417,7 +417,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var annotationView: MKAnnotationView!
         
         let pinIdentifier = "DevicePinIdentifier"
-        var pinView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as MKPinAnnotationView?
+        var pinView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as? MKPinAnnotationView
         
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
@@ -427,7 +427,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             pinView!.enabled = true
             
             if annotation.title != self.fakeLocationAnnotation?.title {
-                let disclosureIndicatorButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+                let disclosureIndicatorButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
                 disclosureIndicatorButton.tintColor = UIColor.clearColor()
                 disclosureIndicatorButton.enabled = false
                 disclosureIndicatorButton.setBackgroundImage(UIImage(named: "DisclosureIndicator")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState: UIControlState.Normal)

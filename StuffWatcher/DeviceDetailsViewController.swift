@@ -23,7 +23,7 @@ class DeviceDetailsViewController: UIViewController
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Device"
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
         self.refreshUI()
     }
@@ -174,20 +174,20 @@ class DeviceDetailsViewController: UIViewController
         self.distanceAlertController!.addAction(UIAlertAction(title: "Finish", style: UIAlertActionStyle.Default, handler: {action in
             self.device.deviceState = Device.DeviceState.Active
             
-            let distanceStr = (self.distanceAlertController!.textFields![0] as UITextField).text
+            let distanceStr = (self.distanceAlertController!.textFields![0] as! UITextField).text
             self.device.distanceToFireAlarm = distanceStr.toInt()!
             
             self.refreshUI()
         }))
         
-        (self.distanceAlertController!.actions[1] as UIAlertAction).enabled = false
+        (self.distanceAlertController!.actions[1] as! UIAlertAction).enabled = false
         self.presentViewController(self.distanceAlertController!, animated: true, completion: nil)
     }
     
     func handleTextFieldTextDidChangeNotification(notification: NSNotification) {
-        let textField = notification.object as UITextField
+        let textField = notification.object as! UITextField
         
-        (self.distanceAlertController!.actions[1] as UIAlertAction).enabled = !textField.text.isEmpty
+        (self.distanceAlertController!.actions[1] as! UIAlertAction).enabled = !textField.text.isEmpty
     }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
@@ -226,7 +226,7 @@ class DeviceDetailsViewController: UIViewController
         if indexPath.section == 0 {
             let KCellIdOne = "DeviceDetailsCellOne"
             
-            cell = tableView.dequeueReusableCellWithIdentifier(KCellIdOne) as UITableViewCell?
+            cell = tableView.dequeueReusableCellWithIdentifier(KCellIdOne) as! UITableViewCell?
             if cell == nil {
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: KCellIdOne)
                 cell!.selectionStyle = UITableViewCellSelectionStyle.None
@@ -296,7 +296,7 @@ class DeviceDetailsViewController: UIViewController
         else if indexPath.section == 1 {
             let KCellIdTwo = "DeviceDetailsCellTwo"
             
-            cell = tableView.dequeueReusableCellWithIdentifier(KCellIdTwo) as UITableViewCell?
+            cell = tableView.dequeueReusableCellWithIdentifier(KCellIdTwo) as! UITableViewCell?
             if cell == nil {
                 cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: KCellIdTwo)
                 cell!.selectionStyle = UITableViewCellSelectionStyle.Gray

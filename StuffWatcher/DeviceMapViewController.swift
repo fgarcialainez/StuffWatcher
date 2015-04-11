@@ -57,7 +57,7 @@ class DeviceMapViewController: UIViewController
         var annotationView: MKAnnotationView!
         
         let pinIdentifier = "DeviceMapPinIdentifier"
-        var pinView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as MKPinAnnotationView?
+        var pinView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as? MKPinAnnotationView
         
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)

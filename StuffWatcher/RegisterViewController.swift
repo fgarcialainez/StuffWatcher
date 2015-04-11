@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.usernameTextField {
             self.passwordTextField.becomeFirstResponder()
         }
@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
     }
 }

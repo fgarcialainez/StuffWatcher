@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.navigationItem.title = "Sign in"
         
-        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItemStyle.Bordered, target: self, action: "signUpAction")
+        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItemStyle.Plain, target: self, action: "signUpAction")
         self.navigationItem.rightBarButtonItem = signUpBarButtonItem
         
         self.usernameTextField?.becomeFirstResponder()
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.usernameTextField {
             self.passwordTextField.becomeFirstResponder()
         }
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
     }
 }
