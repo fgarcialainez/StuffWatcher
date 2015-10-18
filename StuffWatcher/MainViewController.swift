@@ -106,7 +106,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Notifications
     
-    func notificationMessageForDeviceWith(#deviceIndex: Int) -> String {
+    func notificationMessageForDeviceWith(deviceIndex deviceIndex: Int) -> String {
         //Get notification message
         var notificationMessage: String = ""
         
@@ -121,7 +121,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return notificationMessage
     }
     
-    func localNotificationFiredWith(#deviceIndex: Int) {
+    func localNotificationFiredWith(deviceIndex deviceIndex: Int) {
         //Set device state to Alarm
         if let devicesArrayValue = self.devicesArray {
             if deviceIndex < devicesArrayValue.count {
@@ -166,7 +166,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.fakeLocationAnnotation = MKPointAnnotation()
         self.fakeLocationAnnotation!.coordinate = self.currentUserLocation
         self.fakeLocationAnnotation!.title = "Your Location"
-        self.mapView.addAnnotation(self.fakeLocationAnnotation)
+        self.mapView.addAnnotation(self.fakeLocationAnnotation!)
     }
     
     private func loadDeviceMarkersInMap() {
@@ -179,7 +179,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //Load device markers after 3 seconds
         let delay = 0.1 * Double(NSEC_PER_SEC)
-        var time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
             if let devicesArrayValue = self.devicesArray {
                 for currentDevice: Device in devicesArrayValue {
@@ -227,7 +227,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Simulate enter device identifier
         dispatch_async(dispatch_get_main_queue(), {
             self.alertController = UIAlertController(title: "Search Device", message: "Please enter your device identifier with the following format XXXXX-XXXX-XXXX (you can find it in your device packing box)", preferredStyle: UIAlertControllerStyle.Alert)
-            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField) in
                 textField.placeholder = "Device Identifier"
             
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextFieldTextDidChangeNotification:", name: UITextFieldTextDidChangeNotification, object: textField)
@@ -235,12 +235,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Search", style: UIAlertActionStyle.Default, handler: { action in
-                self.newDeviceId = (self.alertController?.textFields![0] as! UITextField).text.uppercaseString
+                self.newDeviceId = (self.alertController?.textFields![0])!.text!.uppercaseString
             
                 self.searchForDevicesAction()
             }))
         
-            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
+            (self.alertController!.actions[1] ).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
@@ -268,11 +268,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
     }
     
-    private func enterSecurityKeyAction(var action: UIAlertAction!) {
+    private func enterSecurityKeyAction(action: UIAlertAction!) {
         //Simulate new device pairing
         dispatch_async(dispatch_get_main_queue(), {
             self.alertController = UIAlertController(title: "Enter Security Key", message: "Please enter the device security key (you can find in your device packaging box)", preferredStyle: UIAlertControllerStyle.Alert)
-            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField) in
                 textField.placeholder = "Security Key"
                 textField.secureTextEntry = true
                     
@@ -282,16 +282,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.Default, handler: self.enterDeviceAliasAction))
                 
-            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
+            (self.alertController!.actions[1] ).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
     
-    private func enterDeviceAliasAction(var action: UIAlertAction!) {
+    private func enterDeviceAliasAction(action: UIAlertAction!) {
         //Simulate enter device alias
         dispatch_async(dispatch_get_main_queue(), {
             self.alertController = UIAlertController(title: "Enter Device Alias", message: "Please enter an alias for your new device", preferredStyle: UIAlertControllerStyle.Alert)
-            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            self.alertController?.addTextFieldWithConfigurationHandler({(textField: UITextField) in
                 textField.placeholder = "Device Alias"
                     
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextFieldTextDidChangeNotification:", name: UITextFieldTextDidChangeNotification, object: textField)
@@ -300,15 +300,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.alertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             self.alertController!.addAction(UIAlertAction(title: "Finish", style: UIAlertActionStyle.Default, handler: self.finishAddDeviceProcessAction))
                 
-            (self.alertController!.actions[1] as! UIAlertAction).enabled = false
+            (self.alertController!.actions[1] ).enabled = false
             self.presentViewController(self.alertController!, animated: true, completion: nil)
         })
     }
     
-    private func finishAddDeviceProcessAction(var action: UIAlertAction!) {
+    private func finishAddDeviceProcessAction(action: UIAlertAction!) {
         //Add new device
-        let newDeviceAlias = (self.alertController?.textFields![0] as! UITextField).text
-        let newDevice = Device(alias: newDeviceAlias, deviceId: self.newDeviceId!, deviceType: self.newDeviceType!, deviceState: Device.DeviceState.Inactive)
+        let newDeviceAlias = (self.alertController?.textFields![0])!.text
+        let newDevice = Device(alias: newDeviceAlias!, deviceId: self.newDeviceId!, deviceType: self.newDeviceType!, deviceState: Device.DeviceState.Inactive)
         
         if self.newDeviceType! == Device.DeviceType.GPS_3G {
             newDevice.location = CLLocationCoordinate2DMake(41.647777, -0.889756)
@@ -323,7 +323,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func handleTextFieldTextDidChangeNotification(notification: NSNotification) {
         let textField = notification.object as! UITextField
         
-        (self.alertController!.actions[1] as! UIAlertAction).enabled = !textField.text.isEmpty
+        (self.alertController!.actions[1]).enabled = !textField.text!.isEmpty
     }
     
     // MARK: - LoginViewControllerDelegate
@@ -379,7 +379,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let KCellId = "DeviceCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(KCellId) as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(KCellId)
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: KCellId)
         }
@@ -413,7 +413,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - MKMapViewDelegate
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationView: MKAnnotationView!
         
         let pinIdentifier = "DevicePinIdentifier"
@@ -422,12 +422,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
             pinView!.animatesDrop = true
-            pinView!.pinColor = (annotation.title == self.fakeLocationAnnotation?.title) ? MKPinAnnotationColor.Purple : MKPinAnnotationColor.Green
+            pinView!.pinColor = (annotation.title! == self.fakeLocationAnnotation?.title) ? MKPinAnnotationColor.Purple : MKPinAnnotationColor.Green
             pinView!.canShowCallout = true
             pinView!.enabled = true
             
-            if annotation.title != self.fakeLocationAnnotation?.title {
-                let disclosureIndicatorButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
+            if annotation.title! != self.fakeLocationAnnotation?.title! {
+                let disclosureIndicatorButton = UIButton(type: UIButtonType.DetailDisclosure)
                 disclosureIndicatorButton.tintColor = UIColor.clearColor()
                 disclosureIndicatorButton.enabled = false
                 disclosureIndicatorButton.setBackgroundImage(UIImage(named: "DisclosureIndicator")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState: UIControlState.Normal)
@@ -443,13 +443,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return annotationView
     }
     
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         //Find tapped annotation
         var selectedDevice: Device?
         
         if let devicesArrayValue = self.devicesArray {
             for currentDevice: Device in devicesArrayValue {
-                if currentDevice.alias == view.annotation.title {
+                if currentDevice.alias == view.annotation!.title! {
                     selectedDevice = currentDevice
                     break
                 }

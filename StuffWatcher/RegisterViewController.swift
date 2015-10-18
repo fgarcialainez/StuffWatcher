@@ -32,9 +32,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func signUpAction()
     {
-        if !self.usernameTextField.text.isEmpty &&
-           !self.passwordTextField.text.isEmpty &&
-           !self.passwordRepeatTextField.text.isEmpty
+        if !self.usernameTextField.text!.isEmpty &&
+           !self.passwordTextField.text!.isEmpty &&
+           !self.passwordRepeatTextField.text!.isEmpty
         {
             if self.passwordTextField.text == self.passwordRepeatTextField.text {
                 self.delegate?.loginCompletedWithSucess()

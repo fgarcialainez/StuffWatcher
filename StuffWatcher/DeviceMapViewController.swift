@@ -40,7 +40,7 @@ class DeviceMapViewController: UIViewController
     private func loadDeviceMarkerInMap() {
         //Load device marker after 2 seconds
         let delay = 2 * Double(NSEC_PER_SEC)
-        var time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
             let annotation = MKPointAnnotation()
             annotation.coordinate = self.device.location!
