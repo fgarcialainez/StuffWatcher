@@ -30,7 +30,7 @@ class DeviceMapViewController: UIViewController
     
     private func setupMap() {
         self.mapView.showsUserLocation = false
-        self.mapView.pitchEnabled = false
+        self.mapView.isPitchEnabled = false
         
         //Center map in device location
         let region = MKCoordinateRegionMakeWithDistance(self.device.location!, 1500, 1500)
@@ -39,16 +39,14 @@ class DeviceMapViewController: UIViewController
     
     private func loadDeviceMarkerInMap() {
         //Load device marker after 2 seconds
-        let delay = 2 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
+        dispatch_after_delay(2) {
             let annotation = MKPointAnnotation()
             annotation.coordinate = self.device.location!
             annotation.title = self.device.alias
             annotation.subtitle = self.device.deviceId
                             
             self.mapView.addAnnotation(annotation)
-        })
+        }
     }
 
     // MARK: - MKMapViewDelegate
@@ -57,14 +55,14 @@ class DeviceMapViewController: UIViewController
         var annotationView: MKAnnotationView!
         
         let pinIdentifier = "DeviceMapPinIdentifier"
-        var pinView = self.mapView.dequeueReusableAnnotationViewWithIdentifier(pinIdentifier) as? MKPinAnnotationView
+        var pinView = self.mapView.dequeueReusableAnnotationView(withIdentifier: pinIdentifier) as? MKPinAnnotationView
         
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
             pinView!.animatesDrop = true
-            pinView!.pinColor = MKPinAnnotationColor.Green
+            pinView!.pinColor = MKPinAnnotationColor.green
             pinView!.canShowCallout = true
-            pinView!.enabled = true
+            pinView!.isEnabled = true
         }
         
         annotationView = pinView

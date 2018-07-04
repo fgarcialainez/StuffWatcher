@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
         {
             if self.passwordTextField.text == self.passwordRepeatTextField.text {
                 self.delegate?.loginCompletedWithSucess()
-                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.dismiss(animated: true, completion: nil)
             }
             else {
                 UIAlertView(title: "Invalid data", message: "Entered passwords don't match", delegate: nil, cancelButtonTitle: "OK").show()
@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.usernameTextField {
             self.passwordTextField.becomeFirstResponder()
         }
@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
 }

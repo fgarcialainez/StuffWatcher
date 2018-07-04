@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.navigationItem.title = "Sign in"
         
-        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItemStyle.Plain, target: self, action: "signUpAction")
+        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItemStyle.plain, target: self, action: #selector(LoginViewController.signUpAction))
         self.navigationItem.rightBarButtonItem = signUpBarButtonItem
         
         self.usernameTextField?.becomeFirstResponder()
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         if self.usernameTextField.text == "testusermvp" && self.passwordTextField.text == "testusermvp" {
             self.delegate?.loginCompletedWithSucess()
             
-            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.dismiss(animated: true, completion: nil)
         }
         else {
             self.passwordTextField.text = ""
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.usernameTextField {
             self.passwordTextField.becomeFirstResponder()
         }
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
 }
