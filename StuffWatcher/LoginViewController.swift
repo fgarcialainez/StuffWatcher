@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         self.navigationItem.title = "Sign in"
         
-        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItemStyle.plain, target: self, action: #selector(LoginViewController.signUpAction))
+        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: UIBarButtonItem.Style.plain, target: self, action: #selector(LoginViewController.signUpAction))
         self.navigationItem.rightBarButtonItem = signUpBarButtonItem
         
         self.usernameTextField?.becomeFirstResponder()

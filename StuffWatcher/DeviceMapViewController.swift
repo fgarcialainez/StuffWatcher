@@ -33,7 +33,7 @@ class DeviceMapViewController: UIViewController
         self.mapView.isPitchEnabled = false
         
         //Center map in device location
-        let region = MKCoordinateRegionMakeWithDistance(self.device.location!, 1500, 1500)
+        let region = MKCoordinateRegion.init(center: self.device.location!, latitudinalMeters: 1500, longitudinalMeters: 1500)
         self.mapView.setRegion(region, animated: true)
     }
     

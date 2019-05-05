@@ -23,7 +23,7 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Device"
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         
         self.refreshUI()
     }
@@ -36,8 +36,8 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
             //Custom message
             let alertMessage: String = self.device.notificationDeviceDetailsMessage()
             
-            let alertController = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
+            let alertController = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
     }
@@ -49,9 +49,9 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
         
         if self.device.deviceState == Device.DeviceState.Active {
             //Stop tracking
-            alertController = UIAlertController(title: "Stop Tracking", message: "Are you sure you want to stop tracking with this device?", preferredStyle: UIAlertControllerStyle.alert)
-            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: {action in
+            alertController = UIAlertController(title: "Stop Tracking", message: "Are you sure you want to stop tracking with this device?", preferredStyle: UIAlertController.Style.alert)
+            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {action in
                 self.device.deviceState = Device.DeviceState.Inactive
                 self.device.stuffType = nil
                 self.device.trackingType = nil
@@ -60,17 +60,17 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
         }
         else if self.device.deviceState == Device.DeviceState.Inactive {
             //Start tracking
-            alertController = UIAlertController(title: "Start Tracking", message: "Are you sure you want to start tracking with this device?", preferredStyle: UIAlertControllerStyle.alert)
-            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: {action in
+            alertController = UIAlertController(title: "Start Tracking", message: "Are you sure you want to start tracking with this device?", preferredStyle: UIAlertController.Style.alert)
+            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {action in
                 self.selectStuffType()
             }))
         }
         else if self.device.deviceState == Device.DeviceState.Alarm {
             //Disable alarm
-            alertController = UIAlertController(title: "Disable Alarm", message: "Are you sure you want to disable the fired alarm?", preferredStyle: UIAlertControllerStyle.alert)
-            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: {action in
+            alertController = UIAlertController(title: "Disable Alarm", message: "Are you sure you want to disable the fired alarm?", preferredStyle: UIAlertController.Style.alert)
+            alertController!.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+            alertController!.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {action in
                 self.device.deviceState = Device.DeviceState.Active
                 self.refreshUI()
             }))
@@ -81,13 +81,13 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
     
     private func refreshUI() {
         if self.device.deviceState == Device.DeviceState.Active {
-            self.actionButton.setImage(UIImage(named: "DeviceButtonActive"), for: UIControlState())
+            self.actionButton.setImage(UIImage(named: "DeviceButtonActive"), for: UIControl.State())
         }
         else if self.device.deviceState == Device.DeviceState.Inactive {
-            self.actionButton.setImage(UIImage(named: "DeviceButtonInactive"), for:UIControlState())
+            self.actionButton.setImage(UIImage(named: "DeviceButtonInactive"), for:UIControl.State())
         }
         else if self.device.deviceState == Device.DeviceState.Alarm {
-            self.actionButton.setImage(UIImage(named: "DeviceButtonAlarm"), for:UIControlState())
+            self.actionButton.setImage(UIImage(named: "DeviceButtonAlarm"), for:UIControl.State())
         }
         
         self.tableView.reloadData()
@@ -95,13 +95,13 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
     
     private func selectStuffType() {
         //Select stuff type
-        let alertController = UIAlertController(title: "Select Stuff Type", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Baggage / Bag", style: UIAlertActionStyle.default, handler: {action in
+        let alertController = UIAlertController(title: "Select Stuff Type", message: "", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Baggage / Bag", style: UIAlertAction.Style.default, handler: {action in
             self.device.stuffType = Device.StuffType.Baggage_Bag
             
             self.selectTrackingType()
         }))
-        alertController.addAction(UIAlertAction(title: "Bike", style: UIAlertActionStyle.default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Bike", style: UIAlertAction.Style.default, handler: {action in
             self.device.stuffType = Device.StuffType.Bike
             
             self.selectTrackingType()
@@ -109,48 +109,48 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
         
         //Tracking cars should be done by GPS/3G devices
         if self.device.deviceType == Device.DeviceType.GPS_3G {
-            alertController.addAction(UIAlertAction(title: "Car", style: UIAlertActionStyle.default, handler: {action in
+            alertController.addAction(UIAlertAction(title: "Car", style: UIAlertAction.Style.default, handler: {action in
                 self.device.stuffType = Device.StuffType.Car
                 
                 self.selectTrackingType()
             }))
         }
         
-        alertController.addAction(UIAlertAction(title: "Person", style: UIAlertActionStyle.default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Person", style: UIAlertAction.Style.default, handler: {action in
             self.device.stuffType = Device.StuffType.Person
             
             self.selectTrackingType()
         }))
-        alertController.addAction(UIAlertAction(title: "Pet", style: UIAlertActionStyle.default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Pet", style: UIAlertAction.Style.default, handler: {action in
             self.device.stuffType = Device.StuffType.Pet
             
             self.selectTrackingType()
         }))
-        alertController.addAction(UIAlertAction(title: "Other", style: UIAlertActionStyle.default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Other", style: UIAlertAction.Style.default, handler: {action in
             self.device.stuffType = Device.StuffType.Other
             
             self.selectTrackingType()
         }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }
     
     private func selectTrackingType() {
         //Select tracking type
-        let alertController = UIAlertController(title: "Select Tracking Type", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Object Motion", style: UIAlertActionStyle.default, handler: {action in
+        let alertController = UIAlertController(title: "Select Tracking Type", message: "", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Object Motion", style: UIAlertAction.Style.default, handler: {action in
             self.device.trackingType = Device.TrackingType.Motion
             self.device.deviceState = Device.DeviceState.Active
             
             self.refreshUI()
         }))
-        alertController.addAction(UIAlertAction(title: "Distance to Object", style: UIAlertActionStyle.default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Distance to Object", style: UIAlertAction.Style.default, handler: {action in
             self.device.trackingType = Device.TrackingType.Distance
            
             self.selectDistanceToFireAlarm()
         }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {action in
             self.device.stuffType = nil
         }))
         
@@ -159,23 +159,26 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
     
     private func selectDistanceToFireAlarm() {
         //Select minimum distance to fire the alarm
-        self.distanceAlertController = UIAlertController(title: "Enter Distance", message: "Please enter the minimum distance to fire the alarm", preferredStyle: UIAlertControllerStyle.alert)
+        self.distanceAlertController = UIAlertController(title: "Enter Distance", message: "Please enter the minimum distance to fire the alarm", preferredStyle: UIAlertController.Style.alert)
         distanceAlertController!.addTextField(configurationHandler: {(textField: UITextField) in
             textField.placeholder = "Distance (meters)"
             textField.keyboardType = UIKeyboardType.numberPad
             
-            NotificationCenter.default.addObserver(self, selector: #selector(DeviceDetailsViewController.handleTextFieldTextDidChangeNotification), name: NSNotification.Name.UITextFieldTextDidChange, object: textField)
+            NotificationCenter.default.addObserver(self, selector: #selector(DeviceDetailsViewController.handleTextFieldTextDidChangeNotification), name: UITextField.textDidChangeNotification, object: textField)
         })
         
-        self.distanceAlertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {action in
+        self.distanceAlertController!.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {action in
             self.device.stuffType = nil
             self.device.trackingType = nil;
         }))
-        self.distanceAlertController!.addAction(UIAlertAction(title: "Finish", style: UIAlertActionStyle.default, handler: {action in
+        self.distanceAlertController!.addAction(UIAlertAction(title: "Finish", style: UIAlertAction.Style.default, handler: {action in
             self.device.deviceState = Device.DeviceState.Active
             
             let distanceStr = (self.distanceAlertController!.textFields![0] ).text
-            self.device.distanceToFireAlarm = Int(distanceStr!)!
+            
+            if let distanceValue = Int(distanceStr!) {
+                self.device.distanceToFireAlarm = distanceValue
+            }
             
             self.refreshUI()
         }))
@@ -228,8 +231,8 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
             
             cell = tableView.dequeueReusableCell(withIdentifier: KCellIdOne) 
             if cell == nil {
-                cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: KCellIdOne)
-                cell!.selectionStyle = UITableViewCellSelectionStyle.none
+                cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: KCellIdOne)
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.none
             }
             
             if indexPath.row == 0 {
@@ -298,8 +301,8 @@ class DeviceDetailsViewController: UIViewController, UITableViewDataSource, UITa
             
             cell = tableView.dequeueReusableCell(withIdentifier: KCellIdTwo) 
             if cell == nil {
-                cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: KCellIdTwo)
-                cell!.selectionStyle = UITableViewCellSelectionStyle.gray
+                cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: KCellIdTwo)
+                cell!.selectionStyle = UITableViewCell.SelectionStyle.gray
                 cell!.textLabel!.textAlignment = NSTextAlignment.center
                 cell!.textLabel!.textColor = UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0)
             }

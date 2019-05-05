@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.mainViewController = (self.window!.rootViewController as! UINavigationController).topViewController as! MainViewController
+        self.mainViewController = (self.window!.rootViewController as! UINavigationController).topViewController as? MainViewController
         
         //Registering for sending user various kinds of notifications
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil))
