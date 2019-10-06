@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="egn-Pi-P0m">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="egn-Pi-P0m">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -10,7 +12,7 @@
             <objects>
                 <navigationController id="egn-Pi-P0m" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="krc-nf-AIc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -30,30 +32,30 @@
                         <viewControllerLayoutGuide type="bottom" id="aR3-rQ-4Gm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Moc-hz-nhJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oNR-8V-AtA">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Djv-GW-4lh" id="AVz-9j-QgA"/>
                                     <outlet property="delegate" destination="Djv-GW-4lh" id="2fK-9R-L2i"/>
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6y0-R3-oHG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <connections>
                                     <outlet property="delegate" destination="Djv-GW-4lh" id="qtI-L0-jN1"/>
                                 </connections>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Va-Lk-VHi">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="unV-Uh-KIf"/>
                                     <barButtonItem style="plain" id="gnv-Jr-nAZ">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="r6j-Bh-gOY">
-                                            <rect key="frame" x="238" y="7" width="150" height="30"/>
+                                            <rect key="frame" x="131.5" y="11" width="151" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="List" width="75"/>
@@ -68,21 +70,19 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="oNR-8V-AtA" secondAttribute="bottom" constant="44" id="1li-eY-E7x"/>
-                            <constraint firstItem="aR3-rQ-4Gm" firstAttribute="top" secondItem="1Va-Lk-VHi" secondAttribute="bottom" id="6zu-sB-E0D"/>
-                            <constraint firstAttribute="centerX" secondItem="1Va-Lk-VHi" secondAttribute="centerX" id="7bI-3K-9YP"/>
-                            <constraint firstItem="1Va-Lk-VHi" firstAttribute="leading" secondItem="Moc-hz-nhJ" secondAttribute="leading" id="DLc-eN-N8o"/>
-                            <constraint firstItem="6y0-R3-oHG" firstAttribute="leading" secondItem="Moc-hz-nhJ" secondAttribute="leading" id="GaB-Vy-cPb"/>
-                            <constraint firstItem="oNR-8V-AtA" firstAttribute="top" secondItem="CLH-3i-kLl" secondAttribute="bottom" constant="-64" id="JdA-G6-hXe"/>
-                            <constraint firstAttribute="trailing" secondItem="6y0-R3-oHG" secondAttribute="trailing" id="Nxp-Rk-9qm"/>
-                            <constraint firstItem="6y0-R3-oHG" firstAttribute="bottom" secondItem="1Va-Lk-VHi" secondAttribute="top" id="Sgv-V7-oEe"/>
-                            <constraint firstAttribute="trailing" secondItem="1Va-Lk-VHi" secondAttribute="trailing" id="XL9-02-473"/>
-                            <constraint firstAttribute="trailing" secondItem="oNR-8V-AtA" secondAttribute="trailing" id="ZFM-YQ-edu"/>
-                            <constraint firstItem="6y0-R3-oHG" firstAttribute="top" secondItem="Moc-hz-nhJ" secondAttribute="top" id="hO2-qa-Wtv"/>
-                            <constraint firstItem="oNR-8V-AtA" firstAttribute="leading" secondItem="Moc-hz-nhJ" secondAttribute="leading" id="jOb-Eh-WSU"/>
-                            <constraint firstAttribute="centerX" secondItem="6y0-R3-oHG" secondAttribute="centerX" id="qg2-ZX-m2q"/>
+                            <constraint firstItem="1Va-Lk-VHi" firstAttribute="top" secondItem="6y0-R3-oHG" secondAttribute="bottom" id="5ZX-Tr-F2h"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="leading" secondItem="1Va-Lk-VHi" secondAttribute="leading" id="7Pg-kD-xwh"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="leading" secondItem="oNR-8V-AtA" secondAttribute="leading" id="7o1-v9-bm2"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="top" secondItem="Moc-hz-nhJ" secondAttribute="topMargin" id="Dlg-u6-3JC"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="leading" secondItem="Moc-hz-nhJ" secondAttribute="leadingMargin" constant="-20" id="LAr-7R-ZWo"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="trailing" secondItem="1Va-Lk-VHi" secondAttribute="trailing" id="Thb-9C-pOt"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="bottom" secondItem="oNR-8V-AtA" secondAttribute="bottom" id="YRx-oM-YxJ"/>
+                            <constraint firstItem="1Va-Lk-VHi" firstAttribute="bottom" secondItem="Moc-hz-nhJ" secondAttribute="bottomMargin" id="ayL-wA-VnH"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="centerX" secondItem="Moc-hz-nhJ" secondAttribute="centerX" id="kLG-Uw-FCC"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="trailing" secondItem="oNR-8V-AtA" secondAttribute="trailing" id="oqH-gc-D7R"/>
+                            <constraint firstItem="6y0-R3-oHG" firstAttribute="top" secondItem="oNR-8V-AtA" secondAttribute="top" id="xtY-3t-vUE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Stuff Watcher" id="83R-kM-WZi"/>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhQ-yC-icl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-78" y="426"/>
+            <point key="canvasLocation" x="-78.260869565217391" y="425.89285714285711"/>
         </scene>
     </scenes>
 </document>

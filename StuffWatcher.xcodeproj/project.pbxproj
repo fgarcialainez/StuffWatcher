@@ -21,6 +21,7 @@
 		DCA3011619BB9D2600E76870 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011219BB9D2600E76870 /* LoginViewController.xib */; };
 		DCA3011719BB9D2600E76870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011319BB9D2600E76870 /* Main.storyboard */; };
 		DCA3011819BB9D2600E76870 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA3011419BB9D2600E76870 /* RegisterViewController.xib */; };
+		DCB59DE82349E0AE00E9386A /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB59DE72349E0AE00E9386A /* LaunchScreenView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DCA3011319BB9D2600E76870 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = StuffWatcher/Resources/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DCA3011419BB9D2600E76870 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = StuffWatcher/Resources/RegisterViewController.xib; sourceTree = SOURCE_ROOT; };
 		DCA3011919BB9D3500E76870 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StuffWatcher/Info.plist; sourceTree = SOURCE_ROOT; };
+		DCB59DE72349E0AE00E9386A /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreenView.xib; path = Resources/LaunchScreenView.xib; sourceTree = "<group>"; };
 		DCF5CBCA19B9AEC8000DFA0E /* StuffWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuffWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				DCA3011319BB9D2600E76870 /* Main.storyboard */,
 				DC6D021E19C4AAD20011408E /* DeviceMapViewController.xib */,
 				DC6D021D19C4AAD20011408E /* DeviceDetailsViewController.xib */,
+				DCB59DE72349E0AE00E9386A /* LaunchScreenView.xib */,
 				DCA3011219BB9D2600E76870 /* LoginViewController.xib */,
 				DCA3011419BB9D2600E76870 /* RegisterViewController.xib */,
 			);
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6D021F19C4AAD20011408E /* DeviceDetailsViewController.xib in Resources */,
+				DCB59DE82349E0AE00E9386A /* LaunchScreenView.xib in Resources */,
 				DCA3011719BB9D2600E76870 /* Main.storyboard in Resources */,
 				DCA3011619BB9D2600E76870 /* LoginViewController.xib in Resources */,
 				DC6D022019C4AAD20011408E /* DeviceMapViewController.xib in Resources */,
@@ -323,7 +327,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = StuffWatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fgarcialainez.$(PRODUCT_NAME:rfc1034identifier)";
@@ -336,7 +339,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = StuffWatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fgarcialainez.$(PRODUCT_NAME:rfc1034identifier)";

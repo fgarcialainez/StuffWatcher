@@ -149,6 +149,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let loginView = LoginViewController(nibName: "LoginViewController", bundle: nil)
         loginView.delegate = self
         let navController = UINavigationController(rootViewController: loginView)
+        navController.modalPresentationStyle = .fullScreen
         
         self.navigationController!.present(navController, animated: true, completion: nil)
     }

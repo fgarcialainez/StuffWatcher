@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,11 +16,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLo-GX-x2e">
-                    <rect key="frame" x="127.5" y="80" width="120" height="120"/>
+                    <rect key="frame" x="147" y="105" width="120" height="120"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="VZI-7p-ZJ0"/>
                         <constraint firstAttribute="height" constant="120" id="zZe-dp-AqB"/>
@@ -35,7 +33,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-Qr-yDU">
-                    <rect key="frame" x="0.0" y="215" width="375" height="452"/>
+                    <rect key="frame" x="0.0" y="240" width="414" height="656"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ri2-9h-1Ib"/>
@@ -45,14 +43,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="JLo-GX-x2e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7iQ-Oa-avY"/>
-                <constraint firstItem="6LQ-Qr-yDU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IKx-Uf-sd7"/>
-                <constraint firstItem="6LQ-Qr-yDU" firstAttribute="top" secondItem="JLo-GX-x2e" secondAttribute="bottom" constant="15" id="Va3-Ax-bzn"/>
-                <constraint firstAttribute="bottom" secondItem="6LQ-Qr-yDU" secondAttribute="bottom" id="nhS-6R-XZD"/>
+                <constraint firstItem="6LQ-Qr-yDU" firstAttribute="top" secondItem="JLo-GX-x2e" secondAttribute="bottom" constant="15" id="CXq-51-aCm"/>
+                <constraint firstItem="JLo-GX-x2e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="ocJ-qG-wtP"/>
+                <constraint firstItem="JLo-GX-x2e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rNt-45-OAT"/>
+                <constraint firstItem="6LQ-Qr-yDU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tPx-uk-q62"/>
                 <constraint firstItem="6LQ-Qr-yDU" firstAttribute="centerX" secondItem="JLo-GX-x2e" secondAttribute="centerX" id="xG4-fT-J6V"/>
-                <constraint firstItem="JLo-GX-x2e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="xGh-Hj-bGo"/>
+                <constraint firstAttribute="bottom" secondItem="6LQ-Qr-yDU" secondAttribute="bottom" id="xc9-Wa-9Zz"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="139.13043478260872" y="141.96428571428569"/>
         </view>
     </objects>
     <resources>
